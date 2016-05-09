@@ -1,0 +1,28 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Hello world!
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+  <ion-card>
+    <ion-card-header>
+      Card Header
+    </ion-card-header>
+    <ion-card-content>
+      Hello {{name}}
+      <button [navPush]="aboutPage">goto about page</button>
+      <button (click)="goToAboutPage()">goto about page another way</button>
+      <button (click)="goToMemberPage()">goto member</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="#person of people">
+      <ion-avatar item-left>
+        <img src="{{person.picture.thumbnail}}">
+      </ion-avatar>
+      <h2>{{person.name.first}} {{person.name.last}}</h2>
+      <p>{{person.email}}</p>
+    </ion-item>
+  </ion-list>  
+</ion-content>
